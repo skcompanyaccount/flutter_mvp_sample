@@ -15,7 +15,6 @@ class UserListModel{
   onInit()async{
     final dynamic result=await api.fetchUsers();
     if(result is List<Map<String, dynamic>>){
-      print(result);
       result.forEach((element) {users.add(UserModel.fromJson(element));});
     }else{
       isErrorExist.value=true;
